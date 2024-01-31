@@ -1,0 +1,16 @@
+.mat-mdc-form-field {
+  margin-top: 1px;
+}
+.mat{
+  width: 48%;
+  margin: 1%;
+}
+th.mat-sort-header-sorted {
+  color: black;
+  text-align: center;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+

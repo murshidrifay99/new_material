@@ -1,0 +1,54 @@
+<form [formGroup]="myform" (ngSubmit)="Saveuser()">
+       <mat-form-field appearance="outline"> 
+        <mat-label>Number</mat-label>
+        <input formControlName="number" matInput>
+       </mat-form-field>
+       <mat-form-field appearance="outline"> 
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput>
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>Atomic mass</mat-label>
+        <input matInput formControlName="atomic_mass">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>Symbol</mat-label>
+        <input matInput formControlName="symbol">
+       </mat-form-field>
+       <mat-form-field appearance="outline">
+        <mat-label>Phase</mat-label>
+       <mat-select formControlName="phase" aria-placeholder="Phase">
+        <mat-option value="Solid">Solid</mat-option>
+        <mat-option value="Liquid">Liquid</mat-option>
+        <mat-option value="Gas">Gas</mat-option>
+       </mat-select>
+      </mat-form-field>
+      <div appearance="outline">
+        <mat-radio-group formControlName="block">
+            <mat-label><b>Block</b></mat-label>
+            <mat-radio-button value="s">S</mat-radio-button>
+            <mat-radio-button value="p">P</mat-radio-button>
+            <mat-radio-button value="d">D</mat-radio-button>
+            <mat-radio-button value="f">F</mat-radio-button>
+        </mat-radio-group>
+    </div>
+       <!-- <mat-form-field appearance="outline">
+        <mat-label>Melting Point</mat-label>
+        <input matInput formControlName="melting_point">
+       </mat-form-field> -->
+       <div>
+        <mat-label>Melting Point</mat-label>
+        <mat-slider min="-3000" step="10" max="4000"  discrete="true" showTickMarks="true">
+          <input matSliderThumb formControlName="melting_point">
+        </mat-slider>
+      </div>
+       <mat-form-field appearance="outline">
+        <mat-label>Choose a Date</mat-label>
+          <input formControlName="discovered_date" matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+       </mat-form-field>
+        <button mat-raised-button type="submit" color="primary">Save</button>
+      <button [routerLink]="['/home']" mat-raised-button color="warn">Close</button>
+    </form>
